@@ -1,12 +1,63 @@
 "use client";
+<<<<<<< HEAD
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+=======
+import {
+  easeInOut,
+  easeOut,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+// @ts-ignore
 import { useView } from "@/contexts/ViewContext";
+import "intersection-observer";
+>>>>>>> fe650a2 (fix: update animation easing for smoother transitions in Hero section)
+import { useInView } from "react-intersection-observer";
 import ContraButton from "../about-section/ContraButton";
 
 export default function Hero() {
+<<<<<<< HEAD
+=======
+  const handWaveAnimation = {
+    rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
+    transition: {
+      duration: 1.5,
+      ease: easeInOut,
+    },
+  };
+
+  const animateIn1 = {
+    opacity: [0, 1],
+    y: ["1rem", "0px"],
+    transition: {
+      delay: 1.5,
+      duration: 0.7,
+      ease: easeOut,
+    },
+  };
+
+  const animateIn2 = {
+    ...animateIn1,
+    transition: {
+      ...animateIn1.transition,
+      delay: 2,
+    },
+  };
+
+  const animateIn3 = {
+    ...animateIn1,
+    transition: {
+      ...animateIn1.transition,
+      delay: 2.4,
+    },
+  };
+
+>>>>>>> fe650a2 (fix: update animation easing for smoother transitions in Hero section)
   const { setSectionInView } = useView();
   const { ref, inView } = useInView({
     threshold: 0.4,
@@ -117,9 +168,13 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        <div className="w-fit mx-auto lg:mx-0">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={animateIn3}
+          className="w-fit mx-auto lg:mx-0"
+        >
           <ContraButton />
-        </div>
+        </motion.div>
       </div>
 
       {/* IMAGE */}
