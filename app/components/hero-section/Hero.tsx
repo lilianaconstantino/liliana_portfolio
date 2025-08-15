@@ -64,5 +64,29 @@ export default function Hero() {
   </motion.div>
 </section>
 
+<<<<<<< HEAD
+=======
+      {/* IMAGE */}
+      <div data-blobity-tooltip="Engineer">
+        <motion.div
+          ref={imgRef}
+          style={{
+            rotate: rotate,
+          }}
+          className="h-image flex items-center w-[310px] h-[380px] xl:w-[390px] xl:h-[470px] justify-center relative"
+          initial={{ opacity: 0 }}
+          animate={animateIn1}
+        >
+          <Image
+            src="/transparent-ade-min.png"
+            priority
+            fill
+            alt="Ade's picture"
+            className="bg-image-radial px-10 pt-20"
+          />
+        </motion.div>
+      </div>
+    </section>
+>>>>>>> da43506 (chore: clean up unused CSS and optimize styles for better performance)
   );
 }
