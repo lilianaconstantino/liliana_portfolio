@@ -47,31 +47,22 @@ export default function Hero() {
     </motion.p>
   </div>
 
-        <div className="w-fit mx-auto lg:mx-0">
-          <ContraButton />
-        </div>
-      </div>
+  {/* Image */}
+  <motion.div
+    className="flex items-center justify-center relative w-[340px] h-[430px] md:w-[400px] md:h-[500px] xl:w-[460px] xl:h-[560px]"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6, duration: 0.7, ease: 'easeOut' }}
+  >
+    <Image
+      src="/barcelona.jpg"
+      priority
+      fill
+      alt="Liliana's profile picture"
+      className="object-cover rounded-2xl shadow-lg border-4 border-[#FFBBB4]"
+    />
+  </motion.div>
+</section>
 
-      {/* IMAGE */}
-      <div data-blobity-tooltip="Engineer">
-        <motion.div
-          ref={imgRef}
-          style={{
-            rotate: rotate,
-          }}
-          className="h-image flex items-center w-[310px] h-[380px] xl:w-[390px] xl:h-[470px] justify-center relative"
-          initial={{ opacity: 0 }}
-          animate={animateIn1}
-        >
-          <Image
-            src="/transparent-ade-min.png"
-            priority
-            fill
-            alt="Ade's picture"
-            className="bg-image-radial px-10 pt-20"
-          />
-        </motion.div>
-      </div>
-    </section>
   );
 }
