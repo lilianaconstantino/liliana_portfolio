@@ -34,6 +34,18 @@ export default function Works() {
     //   stack: ["react.js"],
     //   img: "/placeholder.png",
     // },
+<<<<<<< HEAD
+=======
+    // {
+    //   title: "Multi-step form",
+    //   gitLink: "https://github.com/adex-hub/multi-step-form-main",
+    //   liveLink: "https://ade-loremgaming.netlify.app/",
+    //   about:
+    //     "This site features a clean, user-friendly multi-step form for subscribing to a gaming service. Users input personal info, select a plan (monthly or yearly), choose add-ons (online service, larger storage, customizable profile), and review the summary before confirming.",
+    //   stack: ["html", "sass", "javascript", "ms clarity"],
+    //   img: "/multistep.svg",
+    // },
+>>>>>>> 4ee2f32 (feat: add NiJASIT project to works section, showcasing development efforts for a university journal)
   ];
 
   const { ref, inView } = useInView({
