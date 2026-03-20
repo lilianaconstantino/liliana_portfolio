@@ -21,8 +21,6 @@ export default function Footer() {
       {/* <Link
         className="md:flex hidden items-center gap-1 leading-tight"
         href="#home"
-        data-blobity-offset-x="2"
-        data-blobity-offset-y="0"
         onClick={() => setSectionInView("home")}
       >
         <Icon icon="mdi:arrow-top" className="text-2xl rounded-2xlt" />
@@ -35,8 +33,6 @@ export default function Footer() {
         spy={true}
         duration={500}
         href="#home"
-        data-blobity-offset-x="2"
-        data-blobity-offset-y="0"
         // onClick={() => setSectionInView("home")}
       >
         <Icon icon="mdi:arrow-top" className="text-2xl rounded-2xlt" />

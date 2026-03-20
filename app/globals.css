@@ -13,6 +13,12 @@ body {
   font-style: normal;
 }
 
+.font-quiverleaf {
+  font-family: "quiverleaf-cf", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 /* 
 @theme {

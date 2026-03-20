@@ -4,9 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Tag from "./Tag";
-
-// @ts-ignore
-import "intersection-observer";
 import { useInView } from "react-intersection-observer";
 
 export default function FolioCard({
@@ -17,14 +14,6 @@ export default function FolioCard({
   owner,
   about,
   stack,
-}: {
-  img: string;
-  title: string;
-  gitLink?: string;
-  liveLink: string;
-  owner?: string;
-  about: string;
-  stack: string[];
 }) {
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -35,59 +24,63 @@ export default function FolioCard({
   return (
     <div
       ref={ref}
-      className={`w-full rounded-[20px] std-backdrop-blur backdrop-blur-md bg-linear-to-r from-[#d9d9d91f] to-[#7373731f] grid grid-cols-1 items-start lg:grid-cols-12 xl:flex gap-5 xl:gap-10 p-6 duration-700 ${
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
+      className={`
+        w-full rounded-[20px] backdrop-blur-xl bg-linear-to-r 
+        from-white/10 to-white/5 flex flex-col gap-4 p-5 duration-700
+        ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
+      `}
     >
+      {/* Slightly shorter image */}
       <Image
         src={img}
-        width={420}
-        height={700}
-        alt="work"
-        className={`rounded-[10px] object-cover lg:col-span-5 ${
-          img.includes("public/stripe_report-urlToUrlWithoutFlightMarker.png") ? "object-cover" : "object-contain"
-        }`}
+        alt={`${title} screenshot`}
+        width={1200}
+        height={675}
+        className="rounded-[15px] w-full h-[210px] object-cover"
       />
-      <div className="flex flex-col gap-4 lg:col-span-7">
-        <div className="flex items-center justify-between">
-          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold">
-            {title}
-          </h2>
-          <div className="flex gap-3 md:gap-4 text-2xl sm:text-3xl xl:text-4xl">
-            <Link
-              href={liveLink}
-              className="rounded-full bg-icon-radial p-3 hover:bg-red"
-              target="_blank"
-              aria-label="View Github Repo"
-              data-blobity-radius="34"
-              data-blobity-magnetic="true"
-            >
-              <Icon icon="line-md:external-link-rounded" />
-            </Link>
-            <Link
-              href={`${gitLink ? gitLink : "#"}`}
-              className="rounded-full bg-icon-radial p-3"
-              target="_blank"
-              aria-label="View Live Demo"
-              data-blobity-radius="34"
-              data-blobity-magnetic="true"
-              {...(!gitLink && {
-                "data-blobity-tooltip": `Privately owned by ${owner}`,
-              })}
-            >
-              <Icon
-                icon="mingcute:github-line"
-                className={`${!gitLink && "opacity-30"}`}
-              />
-            </Link>
-          </div>
+
+      {/* Title + Links */}
+      <div className="flex items-center justify-between">
+        <h2 className="font-ekamai text-2xl sm:text-3xl xl:text-4xl font-bold text-[#C1E899]">
+          {title}
+        </h2>
+
+        <div className="flex gap-3 text-2xl sm:text-3xl">
+          <Link
+            href={liveLink}
+            className="rounded-full bg-icon-radial p-3 hover:bg-red"
+            target="_blank"
+          >
+            <Icon icon="line-md:external-link-rounded" />
+          </Link>
+
+          <Link
+            href={gitLink ? gitLink : "#"}
+            target="_blank"
+            aria-label="View GitHub Repo"
+            className="rounded-full bg-icon-radial p-3 transition-opacity duration-200"
+            {...(!gitLink && {
+              "data-blobity-tooltip": `Privately owned by ${owner}`,
+            })}
+          >
+            <Icon
+              icon="mingcute:github-line"
+              className={`${!gitLink ? "opacity-30" : ""}`}
+            />
+          </Link>
         </div>
-        <p className="text-base text-white/70">{about}</p>
-        <div className="flex gap-3 md:gap-4 flex-wrap">
-          {stack.map((tech, index) => (
-            <Tag key={index}>{tech}</Tag>
-          ))}
-        </div>
+      </div>
+
+      {/* Description */}
+      <p className="font-quiverleaf text-[1.1rem] md:text-[1.2rem] text-white/80 leading-relaxed tracking-wide">
+        {about}
+      </p>
+
+      {/* Tech Stack */}
+      <div className="flex gap-2 flex-wrap">
+        {stack.map((tech, index) => (
+          <Tag key={index}>{tech}</Tag>
+        ))}
       </div>
     </div>
   );

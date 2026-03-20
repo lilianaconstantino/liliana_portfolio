@@ -1,42 +1,57 @@
-import React, { useEffect } from "react";
-import Link from "next/link";
+"use client";
+import React from "react";
 import { Syne } from "next/font/google";
-import { useView } from "@/contexts/ViewContext";
-import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/hooks/useSectionInView"; 
 import AnimatedBody from "../ui/AnimatedBody";
 import AnimatedTitle from "../ui/AnimatedTitle";
-import ContraButton from "./ContraButton";
 
 const syne = Syne({ subsets: ["latin"] });
 
 export default function About() {
-  const { setSectionInView } = useView();
-
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-    rootMargin: "-100px 0px",
-  });
-
-  useEffect(() => {
-    if (inView) setSectionInView("about");
-  }, [inView, setSectionInView]);
+  const { ref } = useSectionInView("about", 0.2);
 
   return (
-    <section ref={ref} className="pt-24 md:pt-[150px]" id="about">
+    <section
+      id="about"
+      ref={ref}
+      className="min-h-[100dvh] flex flex-col gap-6 md:gap-10 pt-[110px] text-[#E8E899]"
+    >
       <AnimatedTitle
-        wordSpace={"mr-[14px]"}
-        charSpace={"mr-[0.001em]"}
+        wordSpace="mr-[14px]"
+        charSpace="mr-[0.001em]"
         style={{ color: "#C1E899" }}
-        className="font-ekamai text-[50px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold"
+        className="
+          font-ekamai 
+          text-[45px] smm:text-[40px] 
+          md:text-5xl lg:text-6xl xl:text-7xl 
+          leading-tight text-[#C1E899]
+        "
       >
-       ABOUT 
+        ABOUT
       </AnimatedTitle>
-      <div className="grid grid-cols-1 gap-8 mt-6">
-        <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl">
-          <AnimatedBody className="font-extrabold text-white/60 text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-4">
-            I am a First-Genertaion Mexican-American Latina navigating the tech industry and advocating for our representation in the field.  I aspire to deepen my expertise in web development to help businesses and organizations succeed online and I am eager to expand my knowledge and explore other areas of technology, such as software development and software engineering.
-          </AnimatedBody>
-        </div>
+
+      <div className="max-w-5xl mx-auto space-y-6">
+        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
+          Hello! I’m Liliana, and I’m passionate about making a difference through technology,
+          education, and by expanding the representation of Latinos in fields where we are underrepresented.
+        </AnimatedBody>
+
+        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
+          My journey into tech began when I decided to pivot from a pre-law path to a technical career
+          to challenge myself and prove that I could thrive in a constantly evolving field.
+        </AnimatedBody>
+
+        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
+          I was first introduced to coding during a data analytics fellowship, where I analyzed trends
+          and patterns to uncover insights. After this experience, I continued exploring technical roles
+          and began a year-long web development internship at a nonprofit organization. Both roles
+          challenged me to think critically, solve problems creatively, and strengthen my technical skills.
+        </AnimatedBody>
+
+        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
+          As I continue to grow, my goal is not only to expand my technical expertise but also to help
+          increase the representation of Latinas in tech.
+        </AnimatedBody>
       </div>
     </section>
   );
