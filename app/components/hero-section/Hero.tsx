@@ -47,25 +47,11 @@ export default function Hero() {
     </motion.p>
   </div>
 
-  {/* Image */}
-  <motion.div
-    className="flex items-center justify-center relative w-[340px] h-[430px] md:w-[400px] md:h-[500px] xl:w-[460px] xl:h-[560px]"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.6, duration: 0.7, ease: 'easeOut' }}
-  >
-    <Image
-      src="/barcelona.jpg"
-      priority
-      fill
-      alt="Liliana's profile picture"
-      className="object-cover rounded-2xl shadow-lg border-4 border-[#FFBBB4]"
-    />
-  </motion.div>
-</section>
+        <div className="w-fit mx-auto lg:mx-0">
+          <ContraButton />
+        </div>
+      </div>
 
-<<<<<<< HEAD
-=======
       {/* IMAGE */}
       <div data-blobity-tooltip="Engineer">
         <motion.div
@@ -87,6 +73,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
->>>>>>> da43506 (chore: clean up unused CSS and optimize styles for better performance)
   );
 }
