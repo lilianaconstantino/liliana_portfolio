@@ -1,35 +1,45 @@
 "use client";
-import { Syne } from "next/font/google";
-import Title from "../ui/Title";
+import React from "react";
+import { useSectionInView } from "@/hooks/useSectionInView"; 
 import TimelineItem from "./TimelineItem";
-
-const syne = Syne({ subsets: ["latin"] });
-
-const TimelineData = [
-  {
-    companyImg: "/digitalnestlogo.jpg",
-    jobTitle: "Web Development",
-    company: "Digital Nest",
-    jobType: "Internship",
-    duration: "Aug. 2024 - Present",
-    stuffIDid: [
-      "Developed 3+ responsive websites for clients using HTML, CSS, JavaScript, PHP, and WordPress to improve website design and increase user engagement.",
-      "Collaborated with a cross-functional team of developers and designers to deliver high-quality code and projects in an agile environment, contributing to 100% on-time sprint delivery.",
-      "Created internal projects that enhance the work environment, such as the Salinas Bizznest Scheduler, which pairs interns, and a Google add-on that facilitates room reservations in the office."
-    ],
-  },
-];
+import { TimelineData } from "./TimelineData";
 
 export default function Timeline() {
+  const { ref } = useSectionInView("experience"); 
+
   return (
-    <div className="mt-10 md:mt-[110px]">
-      <Title> Experience</Title>
+    <section
+      id="experience"
+      ref={ref}
+      className="min-h-[100dvh] flex flex-col gap-6 md:gap-5 pt-[110px] text-white"
+    >
+      {/* Title */}
+      <h2
+        className="
+          font-ekamai 
+          text-[45px] sm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl 
+          leading-tight text-[#C1E899]
+          -ml-[2px] sm:-ml-[4px] md:-ml-[6px]
+        "
+      >
+        EXPERIENCE
+      </h2>
 
-      {/* THE THING, AFTER WHICH I WOULD DETERMINE THE HEIGHT */}
-      <div className="flex mt-6 gap-4 pl-3">
-        <div className="w-3 h-auto bg-linear-to-b from-white to-transparent" />
-
-        <div className="flex flex-col gap-10">
+      <div
+        className="
+          w-full
+          rounded-[20px]
+          std-backdrop-blur
+          backdrop-blur-md
+          bg-linear-to-r
+          from-[#d9d9d91f]
+          to-[#7373731f]
+          p-6
+          font-quiverleaf font-extrabold text-white 
+          text-[clamp(1rem,2vw,1.2rem)]
+        "
+      >
+        <div className="flex flex-col gap-12">
           {TimelineData.map((item, index) => (
             <TimelineItem
               key={index}
@@ -43,6 +53,6 @@ export default function Timeline() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
