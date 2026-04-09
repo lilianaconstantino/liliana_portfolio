@@ -68,6 +68,17 @@ export default function Header() {
     </Link>
   </li>
 
+<li>
+    <Link
+      href="#data"
+      className={`transition-colors duration-300 ${
+        sectionInView === "data" ? "text-[#C1E899]" : "text-white"
+      }`}
+    >
+      Data Projects
+    </Link>
+  </li>
+  
   <li>
     <Link
       href="#work"
@@ -75,7 +86,7 @@ export default function Header() {
         sectionInView === "work" ? "text-[#C1E899]" : "text-white"
       }`}
     >
-      Projects
+      Web Projects
     </Link>
   </li>
 

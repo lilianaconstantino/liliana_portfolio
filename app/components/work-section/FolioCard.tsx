@@ -40,8 +40,12 @@ export default function FolioCard({
         ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
       `}
     >
+<<<<<<< Updated upstream
+=======
+      {/* Image */}
+>>>>>>> Stashed changes
       <Image
-        src={img}
+        src={img || "/placeholder.png"}
         alt={`${title} screenshot`}
         width={1200}
         height={675}
@@ -54,28 +58,35 @@ export default function FolioCard({
         </h2>
 
         <div className="flex gap-3 text-2xl sm:text-3xl">
-          <Link
-            href={liveLink}
-            className="rounded-full bg-icon-radial p-3 hover:bg-red"
-            target="_blank"
-          >
-            <Icon icon="line-md:external-link-rounded" />
-          </Link>
+          {/* Live Link */}
+          {liveLink && (
+            <Link
+              href={liveLink}
+              target="_blank"
+              className="rounded-full bg-icon-radial p-3 hover:bg-red"
+            >
+              <Icon icon="line-md:external-link-rounded" />
+            </Link>
+          )}
 
-          <Link
-            href={gitLink ? gitLink : "#"}
-            target="_blank"
-            aria-label="View GitHub Repo"
-            className="rounded-full bg-icon-radial p-3 transition-opacity duration-200"
-            {...(!gitLink && {
-              "data-blobity-tooltip": `Privately owned by ${owner}`,
-            })}
-          >
-            <Icon
-              icon="mingcute:github-line"
-              className={`${!gitLink ? "opacity-30" : ""}`}
-            />
-          </Link>
+          {/* GitHub Link */}
+          {gitLink ? (
+            <Link
+              href={gitLink}
+              target="_blank"
+              aria-label="View GitHub Repo"
+              className="rounded-full bg-icon-radial p-3 transition-opacity duration-200"
+            >
+              <Icon icon="mingcute:github-line" />
+            </Link>
+          ) : (
+            <div
+              className="rounded-full bg-icon-radial p-3 opacity-30"
+              data-blobity-tooltip={`Privately owned by ${owner || "N/A"}`}
+            >
+              <Icon icon="mingcute:github-line" />
+            </div>
+          )}
         </div>
       </div>
 
@@ -84,7 +95,7 @@ export default function FolioCard({
       </p>
 
       <div className="flex gap-2 flex-wrap">
-        {stack.map((tech, index) => (
+        {stack?.map((tech, index) => (
           <Tag key={index}>{tech}</Tag>
         ))}
       </div>
