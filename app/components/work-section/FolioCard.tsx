@@ -6,6 +6,16 @@ import React from "react";
 import Tag from "./Tag";
 import { useInView } from "react-intersection-observer";
 
+type FolioCardProps = {
+  title: string;
+  img: string;
+  gitLink?: string;
+  liveLink: string;
+  owner?: string;
+  about: string;
+  stack: string[];
+};
+
 export default function FolioCard({
   title,
   img,
@@ -14,7 +24,7 @@ export default function FolioCard({
   owner,
   about,
   stack,
-}) {
+}: FolioCardProps) {
   const { ref, inView } = useInView({
     threshold: 0.3,
     rootMargin: "-100px 0px",
@@ -30,7 +40,6 @@ export default function FolioCard({
         ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
       `}
     >
-      {/* Slightly shorter image */}
       <Image
         src={img}
         alt={`${title} screenshot`}
@@ -39,7 +48,6 @@ export default function FolioCard({
         className="rounded-[15px] w-full h-[210px] object-cover"
       />
 
-      {/* Title + Links */}
       <div className="flex items-center justify-between">
         <h2 className="font-ekamai text-2xl sm:text-3xl xl:text-4xl font-bold text-[#C1E899]">
           {title}
@@ -71,12 +79,10 @@ export default function FolioCard({
         </div>
       </div>
 
-      {/* Description */}
       <p className="font-quiverleaf text-[1.1rem] md:text-[1.2rem] text-white/80 leading-relaxed tracking-wide">
         {about}
       </p>
 
-      {/* Tech Stack */}
       <div className="flex gap-2 flex-wrap">
         {stack.map((tech, index) => (
           <Tag key={index}>{tech}</Tag>
