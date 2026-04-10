@@ -3,10 +3,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-<<<<<<< Updated upstream
 import ContraButton from "../about-section/ContraButton";
-=======
->>>>>>> Stashed changes
 import { useView } from "@/contexts/ViewContext";
 
 export default function Hero() {
