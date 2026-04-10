@@ -40,10 +40,7 @@ export default function FolioCard({
         ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
       `}
     >
-<<<<<<< Updated upstream
-=======
       {/* Image */}
->>>>>>> Stashed changes
       <Image
         src={img || "/placeholder.png"}
         alt={`${title} screenshot`}
