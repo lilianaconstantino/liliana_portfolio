@@ -123,7 +123,7 @@ export default function Contact() {
         <div className="flex flex-col justify-center text-white space-y-6">
           <div>
             <h3 className="font-quiverleaf font-bold text-2xl text-[1.2rem] text-[#C1E899] mb-2">
-              Let's Connect
+              Let&apos;s Connect
             </h3>
             <p className="font-quiverleaf font-bold text-gray-300 text-[1.2rem]">
               Feel free to reach out for collaborations or just a friendly chat!

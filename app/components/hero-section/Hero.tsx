@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ContraButton from "../about-section/ContraButton";
 import { useView } from "@/contexts/ViewContext";
 
 export default function Hero() {
@@ -13,9 +12,9 @@ export default function Hero() {
     rootMargin: "-100px 0px",
   });
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (inView) setSectionInView("home");
-  }, [inView, setSectionInView]);
+  }, [inView, setSectionInView]);*/
 
   return (
     <section
@@ -42,9 +41,9 @@ export default function Hero() {
       transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
       className="font-extrabold text-[#FCE0CE] text-[clamp(1.1rem,2vw,1.5rem)] mt-6"
     >
-      Welcome to my Portfolio! I have experince witinh data, web development, and education. 
-      I look froward to expanding my tech skills in my next role and utilizing my interpersonal 
-      skills to continue forming connections with others. 
+      Currently focused on elevating my skills in front-end and back-end development through
+      hands-on projects as well as learning about AI foundations and Generative AI through
+      Oracle University.
     </motion.p>
   </div>
 

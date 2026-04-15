@@ -4,6 +4,7 @@ import Works from "./components/work-section/Works";
 import Timeline from "./components/work-section/Timeline";
 import About from "./components/about-section/About";
 import Contact from "./components/contact+footer/Contact";
+import DataProjects from "./components/work-section/DataProjects";
 import Footer from "./components/contact+footer/Footer";
 
 export default function Home() {
@@ -14,7 +15,12 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* Projects Section */}
+       {/* Data Projects Section */}
+      <section id="data">
+        <DataProjects />
+      </section>
+
+      {/* WebProjects Section */}
       <section id="work">
         <Works />
       </section>
