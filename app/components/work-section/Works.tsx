@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import FolioCard from "./FolioCard";
 import { useView } from "@/contexts/ViewContext";
 import "intersection-observer";
-import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";90
 
 export default function Works() {
   const { setSectionInView } = useView();
@@ -18,14 +18,9 @@ export default function Works() {
       img: "/spacioImg.png",
     },
     {
-<<<<<<< HEAD
       title: "Stripe Report",
       gitLink: "https://github.com/lilianaconstantino/Stripe_Report_UI.git",
       liveLink: "https://nijasit.bellsuniversity.edu.ng/",
-=======
-      title: "NiJASIT",
-      liveLink: "https://nijasit.vercel.app/",
->>>>>>> e254c47 (fix: change link to fully operational NiJASIT site)
       about:
         "Built an interactive UI for a reporting dashboard with React.js to streamline and consolidate financial records through a downloadable CSV template.",
       stack: ["react.js", "javascript", "stripe.js", "node.js"],
