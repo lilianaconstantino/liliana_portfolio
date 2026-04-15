@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import FolioCard from "./FolioCard";
 import { useView } from "@/contexts/ViewContext";
 import "intersection-observer";
-import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";90
 
 export default function Works() {
   const { setSectionInView } = useView();
