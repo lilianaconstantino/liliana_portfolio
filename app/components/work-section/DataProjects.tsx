@@ -9,23 +9,39 @@ export default function DataProjects() {
   const { setSectionInView } = useView();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const dataProjects = [
-    {
-      title: "San Francisco Crime Data Analysis",
-      gitLink: "https://github.com/lilianaconstantino/sf-crime-analysis",
-      liveLink: "",
-      problem:
-        "Analyze crime trends across San Francisco to identify high-risk areas and seasonal patterns.",
-      insight:
-        "Theft-related crimes peak during summer months, especially in downtown areas with high foot traffic.",
-      stack: ["Python", "Pandas", "SQL", "Tableau"],
-      charts: [
-        { src: "/heatchart.png", title: "Crime Activity Heatmap" },
-        { src: "/bydistrict.png", title: "Crime by Police District" },
-        { src: "/crime_over_time.png", title: "Crime Trends Over Time" },
-      ],
-    },
-  ];
+ const dataProjects = [
+  {
+    title: "San Francisco Crime Data Analysis",
+    gitLink: "https://github.com/lilianaconstantino/sf-crime-analysis",
+    liveLink: "",
+    overview:
+      "An exploratory data analysis project examining crime trends across San Francisco using public datasets.",
+    problem:
+      "Identify high-risk areas and understand how crime patterns change over time.",
+    approach:
+      "Cleaned and analyzed crime data using Python and SQL, then visualized trends and geographic patterns in Tableau.",
+    insights: [
+      "Crime rates increased by 18% in certain districts over a 2-year period",
+      "Theft-related incidents made up the majority of reported cases",
+      "Crime activity peaked during summer months in high foot-traffic areas",
+    ],
+    stack: ["Python", "Pandas", "SQL", "Tableau"],
+    charts: [
+      { src: "/heatchart.png", 
+        title: "Crime Activity Heatmap",
+        description: "This heatmap highlights areas with the highest concentration of reported crimes, with downtown regions showing the most activity.",
+      },
+      { src: "/crimebypolice.png", 
+        title: "Crime by Police District",
+        description: "Certain districts consistently report higher crime rates, suggesting geographic concentration of incidents.",
+      },
+      { src: "/topcrimecategories.png", 
+        title: "Crime Trends Over Time",
+        description: "Theft-related crimes dominate across all time periods, with noticeable spikes during summer months.",
+      },
+    ],
+  },
+];
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -68,12 +84,11 @@ export default function DataProjects() {
                   <h3 className="text-xl md:text-2xl font-bold">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-white/70">
-                    {project.stack.join(" • ")}
+                  <p className="md:text-lg text-white/70">
+                    {project.overview}
                   </p>
-                  <p className="text-sm md:text-base text-white/70 mt-2 max-w-xl">
-                    An exploratory data analysis project examining crime trends
-                    across police districts using SQL, Python, and Tableau.
+                  <p className="md:text-lg text-white/70">
+                    {project.stack.join(" • ")}
                   </p>
                 </div>
 
@@ -84,74 +99,87 @@ export default function DataProjects() {
               </div>
 
               {/* 🔥 Expanded Section */}
-              {isOpen && (
-                <div className="mt-5 flex flex-col gap-4 animate-fadeIn">
-                  {/* Text Sections */}
-                  <div className="text-white/90 space-y-3">
-                    <p>
-                      <span className="font-bold text-[#C1E899]">
-                        Project Overview:
-                      </span>{" "}
-                      {project.problem}
-                    </p>
+           {isOpen && (
+  <div className="mt-6 flex flex-col gap-6 animate-fadeIn">
 
-                    <p>
-                      <span className="font-bold text-[#C1E899]">
-                        Tools & Technologies:
-                      </span>{" "}
-                      {project.stack.join(", ")}
-                    </p>
+    {/* 🎯 Problem */}
+    <div>
+      <h4 className="font-semibold md:text-lg text-[#C1E899]">Problem</h4>
+      <p className="text-base md:text-lg text-white/90">{project.problem}</p>
+    </div>
 
-                    <p>
-                      <span className="font-bold text-[#C1E899]">
-                        Key Insight:
-                      </span>{" "}
-                      {project.insight}
-                    </p>
-                  </div>
+    {/* ⚙️ Approach */}
+    <div>
+      <h4 className="font-semibold md:text-lg text-[#C1E899]">Approach</h4>
+      <p className="text-base md:text-lg text-white/90">{project.approach}</p>
+    </div>
 
-                  {/* 📊 Charts Section */}
-                  <div className="mt-5 grid md:grid-cols-2 gap-4">
-                    {project.charts.map((chart, i) => (
-                      <div key={i}>
-                        <p className="text-sm text-white/70 mb-1">
-                          {chart.title}
-                        </p>
-                        <Image
-                          src={chart.src}
-                          alt={chart.title}
-                          width={1200}
-                          height={675}
-                          className="rounded-xl w-full h-auto object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
+    {/* 💡 Key Insights */}
+    <div>
+      <h4 className="font-semibold md:text-lg text-[#C1E899]">Key Insights</h4>
+      <ul className="list-disc ml-5 text-base md:text-lg text-white/90 mt-2 space-y-1">
+        {project.insights.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
 
-                  {/* 🔗 Links */}
-                  <div className="flex gap-3 mt-4">
-                    {project.gitLink && (
-                      <a
-                        href={project.gitLink}
-                        target="_blank"
-                        className="px-4 py-2 border border-[#C1E899] rounded-lg hover:bg-[#C1E899] hover:text-black transition"
-                      >
-                        GitHub
-                      </a>
-                    )}
+    {/* 🛠 Tools */}
+    <div>
+      <h4 className="font-semibold md:text-lg text-[#C1E899]">Tools & Technologies</h4>
+      <p className="text-base md:text-lg text-white/90 mt-1">{project.stack.join(", ")}</p>
+    </div>
 
-                    {project.liveLink && (
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        className="px-4 py-2 border border-[#C1E899] rounded-lg hover:bg-[#C1E899] hover:text-black transition"
-                      >
-                        Live Dashboard
-                      </a>
-                    )}
-                  </div>
-                </div>
-              )}
+    {/* 📊 Charts */}
+    <div className="flex flex-col gap-10">
+    {project.charts.map((chart, i) => (
+      <div key={i} className="text-center">
+      
+      {/* Title */}
+      <p className="text-lg md:text-xl font-semibold text-white mb-3">
+        {chart.title}
+      </p>
+
+      {/* Image */}
+      <Image
+        src={chart.src}
+        alt={chart.title}
+        width={1200}
+        height={675}
+        className="w-[80%] max-w-2xl mx-auto h-auto object-contain"
+      />
+
+      {/* Description */}
+      <p className="mt-3 text-base md:text-lg text-white/80 max-w-2xl mx-auto">
+        {chart.description}
+      </p>
+
+    </div>
+  ))}
+</div>
+
+    {/* 🔗 Links */}
+    <div className="flex gap-3 mt-2">
+      <a
+        href={project.gitLink}
+        target="_blank"
+        className="px-4 py-2 border border-[#C1E899] rounded-lg hover:bg-[#C1E899] hover:text-black transition"
+      >
+        GitHub
+      </a>
+
+      {project.liveLink && (
+        <a
+          href={project.liveLink}
+          target="_blank"
+          className="px-4 py-2 border border-[#C1E899] rounded-lg hover:bg-[#C1E899] hover:text-black transition"
+        >
+          Live Dashboard
+        </a>
+      )}
+    </div>
+  </div>
+)}
             </div>
           );
         })}
