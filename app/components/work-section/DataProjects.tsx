@@ -62,7 +62,7 @@ export default function DataProjects() {
       id="data"
       className="font-quiverleaf flex flex-col gap-6 pt-[110px] text-[#C1E899]"
     >
-      <h2 className="font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+      <h2 className="font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">git fetch origin
         DATA PROJECTS
       </h2>
 
