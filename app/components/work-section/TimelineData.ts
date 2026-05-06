@@ -3,12 +3,11 @@ export const TimelineData = [
     companyImg: "/digitalnest.jpeg",
     jobTitle: "Web Developer",
     company: "Digital Nest",
-    jobType: "Internship",
+    jobType: "Associate",
     duration: "Aug 2024 - Aug 2025",
     stuffIDid: [
-      "Developed 3+ responsive websites for clients using HTML, CSS, JavaScript, PHP, and WordPress to improve website design and increase user engagement.",
-      "Collaborated with a cross-functional team of developers and designers to deliver high-quality code and projects in an agile environment, contributing to 100% on-time sprint delivery.",
-      "Created internal projects that enhance the work environment, such as the Salinas Bizznest Scheduler, which pairs interns, and a Google add-on that facilitates room reservations in the office.",
+      "Developed and maintained responsive client websites using React.js, JavaScript, PHP, and WordPress to improve usability and engagement.",
+      "Extracted, cleaned, and structured data from external APIs (Stripe, Google Calendar), producing reusable datasets and technical documentation.",
     ],
   },
 

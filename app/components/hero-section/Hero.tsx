@@ -40,12 +40,16 @@ export default function Hero() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
-      className="font-extrabold text-[#FCE0CE] text-[clamp(1.1rem,2vw,1.5rem)] mt-6"
-    >
-      Currently focused on elevating my skills in front-end and back-end development through
-      hands-on projects as well as learning about AI foundations and Generative AI through
-      Oracle University.
-    </motion.p>
+      className="text-[#FCE0CE] mt-6"
+>
+    <span className="block font-extrabold text-[clamp(1.1rem,2vw,1.5rem)]">
+      Data-Focused Developer 
+    </span>
+  
+    <span className="block font-normal text-[clamp(0.95rem,1.5vw,1.2rem)] mt-1">
+      Building data-driven solutions with SQL, Python, and modern web technologies
+    </span>
+  </motion.p>
   </div>
 
   {/* Image */}
@@ -56,7 +60,7 @@ export default function Hero() {
     transition={{ delay: 0.6, duration: 0.7, ease: 'easeOut' }}
   >
     <Image
-      src="/barcelona.jpg"
+      src="/devfestfav.jpg"
       priority
       fill
       alt="Liliana's profile picture"

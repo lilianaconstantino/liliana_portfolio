@@ -4,6 +4,7 @@ import { Syne } from "next/font/google";
 import { useSectionInView } from "@/hooks/useSectionInView"; 
 import AnimatedBody from "../ui/AnimatedBody";
 import AnimatedTitle from "../ui/AnimatedTitle";
+import Container from "../Container/Container";
 
 const syne = Syne({ subsets: ["latin"] });
 
@@ -14,45 +15,79 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="min-h-[100dvh] flex flex-col gap-6 md:gap-10 pt-[110px] text-[#E8E899]"
+      className="font-quiverleaf flex flex-col gap-6 md:gap-5 pt-[110px] pb-10 text-[#C1E899]"
     >
+    <Container>
       <AnimatedTitle
         wordSpace="mr-[14px]"
         charSpace="mr-[0.001em]"
         style={{ color: "#C1E899" }}
-        className="
-          font-ekamai 
-          text-[45px] smm:text-[40px] 
-          md:text-5xl lg:text-6xl xl:text-7xl 
-          leading-tight text-[#C1E899]
-        "
+        className="pt-10 font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
       >
         ABOUT
       </AnimatedTitle>
 
-      <div className="max-w-5xl mx-auto space-y-6">
-        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
-          Hello! I’m Liliana, and I’m passionate about making a difference through technology,
-          education, and by expanding the representation of Latinos in fields where we are underrepresented.
-        </AnimatedBody>
+      {/* MAIN CONTENT */}
+     <div className="flex items-stretch gap-10">
+        
+        {/* TEXT SECTION */}
+       <div className="flex-1 flex flex-col gap-4">
+          
+          <AnimatedBody className="text-[#FCE0CE] text-[clamp(1.1rem,1.2vw,2rem)] leading-relaxed">
+            I’m Liliana Constantino, a data-focused developer with a background in web development and data analytics. 
+            I enjoy working with data to uncover insights, solve problems, and build thoughtful, user-centered solutions.
+          </AnimatedBody>
 
-        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
-          My journey into tech began when I decided to pivot from a pre-law path to a technical career
-          to challenge myself and prove that I could thrive in a constantly evolving field.
-        </AnimatedBody>
+          <AnimatedBody className="text-[#FCE0CE] text-[clamp(1.1rem,1.2vw,2rem)] leading-relaxed">
+            I was first introduced to coding through a data analytics fellowship, where I worked with real-world datasets to identify trends and communicate insights. 
+            That experience sparked my interest in data and pushed me to continue developing my technical skills.
+          </AnimatedBody>
 
-        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
-          I was first introduced to coding during a data analytics fellowship, where I analyzed trends
-          and patterns to uncover insights. After this experience, I continued exploring technical roles
-          and began a year-long web development internship at a nonprofit organization. Both roles
-          challenged me to think critically, solve problems creatively, and strengthen my technical skills.
-        </AnimatedBody>
+          <AnimatedBody className="text-[#FCE0CE] text-[clamp(1.1rem,1.2vw,2rem)] leading-relaxed">
+            Since then, I’ve gained hands-on experience through a web development internship at a nonprofit, where I built applications and strengthened my foundation in problem-solving, collaboration, and writing clean, maintainable code. 
+            More recently, I’ve been focusing on SQL, Python, and data analysis as I work toward transitioning into a technical role in data.
+          </AnimatedBody>
 
-        <AnimatedBody className="font-quiverleaf font-semibold text-[#FCE0CE] text-xl sm:text-2xl lg:text-3xl leading-relaxed">
-          As I continue to grow, my goal is not only to expand my technical expertise but also to help
-          increase the representation of Latinas in tech.
-        </AnimatedBody>
-      </div>
+          <AnimatedBody className="text-[#FCE0CE] text-[clamp(1.1rem,1.2vw,2rem)] leading-relaxed">
+            Outside of tech, I enjoy going to the gym regularly and love traveling and experiencing new places. 
+            These parts of my life keep me grounded, curious, and constantly learning, which I bring into my work as well.
+          </AnimatedBody>
+
+          <AnimatedBody className="text-[#FCE0CE] text-[clamp(1.1rem,1.2vw,2rem)] leading-relaxed">
+            I’m especially motivated to contribute to greater representation of Latinas in tech and hope to grow into a role where I can build data systems that support informed decision-making and create meaningful impact.
+          </AnimatedBody>
+
+        </div>
+
+        {/* IMAGE SECTION */}
+    <div className="flex-1 flex justify-end">
+      <div className="grid grid-cols-2 gap-4 w-full max-w-[520px] h-full">
+    
+    {/* BIG IMAGE */}
+    <img
+      src="/capri2.JPG"
+      alt="Liliana 1"
+      className="col-span-2 h-[250px] md:h-[280px] w-full object-cover rounded-2xl shadow-lg border border-white/10 transition-transform duration-300 hover:scale-[1.03]"
+    />
+
+    {/* SMALL IMAGES */}
+    <img
+      src="/barcelonaPark.jpeg"
+      alt="Liliana 2"
+      className="h-[170px] md:h-[190px] w-full object-cover rounded-2xl shadow-lg border border-white/10 transition-transform duration-300 hover:scale-[1.03]"
+    />
+
+    <img
+      src="/italy.JPG"
+      alt="Liliana 3"
+      className="h-[170px] md:h-[190px] w-full object-cover rounded-2xl shadow-lg border border-white/10 transition-transform duration-300 hover:scale-[1.03]"
+    />
+
+  </div>
+ </div>
+</div>
+  </Container>
     </section>
   );
 }
+

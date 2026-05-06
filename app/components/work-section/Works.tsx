@@ -2,21 +2,23 @@ import React, { useEffect } from "react";
 import FolioCard from "./FolioCard";
 import { useView } from "@/contexts/ViewContext";
 import "intersection-observer";
-import { useInView } from "react-intersection-observer";90
+import { useInView } from "react-intersection-observer";
+import Container from "../Container/Container";
 
 export default function Works() {
   const { setSectionInView } = useView();
 
   const works = [
-    {
-      title: "spacio",
-      gitLink: "https://github.com/lilianaconstantino/spacio.git",
-      liveLink: "https://spacio.pages.dev/home/",
-      about:
-        "Spacio integrates Google’s Workspace, allowing users to view the rooms' calendars and book rooms directly. Once a room is booked, the reservation appears on both the user's Google Calendar and the room’s calendar.",
-      stack: ["react.js", "Apps Script", "JavaScript", "Google Calendar API"],
-      img: "/spacioImg.png",
+   {
+    title: "spacio",
+    gitLink: "https://github.com/lilianaconstantino/spacio.git",
+    videoId: "mllE4x71St4",
+    about:
+      "Spacio integrates Google’s Workspace, allowing users to view the rooms' calendars and book rooms directly. Once a room is booked, the reservation appears on both the user's Google Calendar and the room’s calendar.",
+    stack: ["react.js", "Apps Script", "JavaScript", "Google Calendar API"],
+    img: "/spacioImg.png",
     },
+
     {
       title: "Stripe Report",
       gitLink: "https://github.com/lilianaconstantino/Stripe_Report_UI.git",
@@ -25,14 +27,6 @@ export default function Works() {
       stack: ["react.js", "javascript", "stripe.js", "node.js"],
       img: "/stripe_report-uiImg.png",
     },
-    // {
-    //   title: "3rd Project Coming Soon",
-    //   gitLink: "#",
-    //   liveLink: "#",
-    //   about: "A placeholder for your upcoming portfolio project!",
-    //   stack: ["react.js"],
-    //   img: "/placeholder.png",
-    // },
   ];
 
   const { ref, inView } = useInView({
@@ -50,9 +44,11 @@ export default function Works() {
       id="work"
       className="font-quiverleaf flex flex-col gap-6 md:gap-5 pt-[110px] text-[#C1E899]"
     >
-      <h2 className="font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-        WEB PROJECTS
-      </h2>
+  <Container>
+
+    <h2 className="pt-10 font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+      WEB PROJECTS
+    </h2>
 
       {/* ★ 3-Card Responsive Grid ★ */}
       <div
@@ -70,12 +66,13 @@ export default function Works() {
             img={work.img}
             title={work.title}
             gitLink={work.gitLink}
-            liveLink={work.liveLink}
+            videoId={work.videoId}
             about={work.about}
             stack={work.stack}
           />
         ))}
       </div>
+    </Container>
     </section>
   );
 }

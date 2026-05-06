@@ -47,15 +47,15 @@ export default function Contact() {
   <section
     ref={ref}
     id="contact"
-    className="min-h-[100dvh] flex flex-col gap-6 md:gap-10 pt-[110px] text-[#E8E899]"
+    className="font-quiverleaf max-w-[90%] xl:max-w-[1223px] mx-auto px-6 pt-[200px] pb-10 flex flex-col gap-8 text-[#C1E899] h-[75dvh] justify-end"
   >
 
-      <h2 className="font-ekamai text-[45px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight text-[#C1E899]">
+      <h2 className="pt-10 font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
         CONTACT ME
       </h2>
 
       {/* ✅ Side-by-side layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>

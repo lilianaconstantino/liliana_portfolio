@@ -60,13 +60,13 @@ export default function DataProjects() {
     <section
       ref={ref}
       id="data"
-      className="font-quiverleaf flex flex-col gap-6 pt-[110px] text-[#C1E899]"
+      className="min-h-[100dvh] pt-24 pb-10 text-[#C1E899] scroll-mt-24"
     >
-      <h2 className="font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">git fetch origin
-        DATA PROJECTS
-      </h2>
+    <div className="w-full max-w-[90%] xl:max-w-[1223px] mx-auto px-6 flex flex-col gap-6 md:gap-5">
 
-      <div className="flex flex-col gap-4">
+    <h2 className="pt-10 font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+      DATA PROJECTS
+    </h2>
         {dataProjects.map((project, index) => {
           const isOpen = openIndex === index;
 

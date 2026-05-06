@@ -3,6 +3,7 @@ import React from "react";
 import { useSectionInView } from "@/hooks/useSectionInView"; 
 import TimelineItem from "./TimelineItem";
 import { TimelineData } from "./TimelineData";
+import Container from "../Container/Container";
 
 export default function Timeline() {
   const { ref } = useSectionInView("experience"); 
@@ -11,17 +12,12 @@ export default function Timeline() {
     <section
       id="experience"
       ref={ref}
-      className="min-h-[100dvh] flex flex-col gap-6 md:gap-5 pt-[110px] text-white"
+      className="font-quiverleaf flex flex-col gap-6 md:gap-5 pt-[110px] text-[#C1E899]"
     >
-      {/* Title */}
+     <Container>
+
       <h2
-        className="
-          font-ekamai 
-          text-[45px] sm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl 
-          leading-tight text-[#C1E899]
-          -ml-[2px] sm:-ml-[4px] md:-ml-[6px]
-        "
-      >
+        className="pt-10 font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
         EXPERIENCE
       </h2>
 
@@ -53,6 +49,7 @@ export default function Timeline() {
           ))}
         </div>
       </div>
+    </Container>
     </section>
   );
 }
