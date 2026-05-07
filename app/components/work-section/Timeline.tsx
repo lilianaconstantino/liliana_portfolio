@@ -1,55 +1,60 @@
 "use client";
 import React from "react";
-import { useSectionInView } from "@/hooks/useSectionInView"; 
+import { useSectionInView } from "@/hooks/useSectionInView";
 import TimelineItem from "./TimelineItem";
 import { TimelineData } from "./TimelineData";
 import Container from "../Container/Container";
 
 export default function Timeline() {
-  const { ref } = useSectionInView("experience"); 
+  const { ref } = useSectionInView("experience");
 
   return (
     <section
       id="experience"
       ref={ref}
-      className="font-quiverleaf flex flex-col gap-6 md:gap-5 pt-[110px] text-[#C1E899]"
+      className="font-quiverleaf pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-28 lg:pb-16 text-[#C1E899] scroll-mt-28"
     >
-     <Container>
+      <Container>
 
-      <h2
-        className="pt-10 font-ekamai text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-        EXPERIENCE
-      </h2>
+        {/* TITLE */}
+        <h2 className="font-ekamai text-[40px] sm:text-[45px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-8 md:mb-10">
+          EXPERIENCE
+        </h2>
 
-      <div
-        className="
-          w-full
-          rounded-[20px]
-          std-backdrop-blur
-          backdrop-blur-md
-          bg-linear-to-r
-          from-[#d9d9d91f]
-          to-[#7373731f]
-          p-6
-          font-quiverleaf font-extrabold text-white 
-          text-[clamp(1rem,2vw,1.2rem)]
-        "
-      >
-        <div className="flex flex-col gap-12">
-          {TimelineData.map((item, index) => (
-            <TimelineItem
-              key={index}
-              companyImg={item.companyImg}
-              jobTitle={item.jobTitle}
-              company={item.company}
-              jobType={item.jobType}
-              duration={item.duration}
-              stuffIDid={item.stuffIDid}
-            />
-          ))}
+        {/* TIMELINE CONTAINER */}
+        <div
+          className="
+            w-full
+            rounded-[20px]
+            std-backdrop-blur
+            backdrop-blur-md
+            bg-linear-to-r
+            from-[#d9d9d91f]
+            to-[#7373731f]
+            p-5 sm:p-6 md:p-8
+            text-white
+          "
+        >
+
+          {/* TIMELINE ITEMS */}
+          <div className="flex flex-col gap-10 md:gap-12">
+
+            {TimelineData.map((item, index) => (
+              <TimelineItem
+                key={index}
+                companyImg={item.companyImg}
+                jobTitle={item.jobTitle}
+                company={item.company}
+                jobType={item.jobType}
+                duration={item.duration}
+                stuffIDid={item.stuffIDid}
+              />
+            ))}
+
+          </div>
         </div>
-      </div>
-    </Container>
+
+      </Container>
     </section>
   );
 }
