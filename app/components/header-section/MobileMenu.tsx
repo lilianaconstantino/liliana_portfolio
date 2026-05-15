@@ -1,14 +1,13 @@
-import { useView } from "@/contexts/ViewContext";
-import React, { SetStateAction } from "react";
-import Link from "next/link";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { useView } from "@/contexts/ViewContext"; 
+import React, { SetStateAction } from "react"; 
+import Link from "next/link"; import { Icon } from "@iconify/react/dist/iconify.js"; 
 import { motion } from "framer-motion";
 
-export default function MobileMenu({
-  onMenuOpen,
-}: {
-  onMenuOpen: React.Dispatch<SetStateAction<boolean>>;
-}) {
+export default function MobileMenu({ 
+  onMenuOpen, 
+}: { 
+  onMenuOpen: React.Dispatch<SetStateAction<boolean>>; 
+}) { 
   const { sectionInView } = useView();
 
   return (
@@ -16,11 +15,9 @@ export default function MobileMenu({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="grid  z-10 items-center grid-cols-2 sm:hidden px-6 py-5 fixed top-12 rounded-2xl bg-linear-to-r from-[#d9d9d91f]  max-w-[90%] w-full to-[#7373731f] mt-12 sm:mt-16 std-backdrop-blur backdrop-blur-md"
-    >
-      <ul
-        className="flex flex-col gap-4 lg:gap-12 text-white/25"
-        onClick={() => onMenuOpen(false)}
+      className="grid z-10 items-center grid-cols-2 sm:hidden px-6 py-5 fixed top-12 rounded-2xl bg-linear-to-r from-[#d9d9d91f] max-w-[90%] w-full to-[#7373731f] mt-12 sm:mt-16 std-backdrop-blur backdrop-blur-md" >
+      <ul className="flex flex-col gap-4 lg:gap-12 text-white/25" 
+          onClick={() => onMenuOpen(false)}
       >
         <Link
           href="#home"
@@ -29,10 +26,22 @@ export default function MobileMenu({
           Home
         </Link>
         <Link
+          href="#data"
+          className={`${sectionInView === "data" && "text-white"} w-fit`}
+        >
+          Data Projects
+        </Link>
+        <Link
           href="#work"
           className={`${sectionInView === "work" && "text-white"} w-fit`}
         >
-          Work
+          Web Projects
+        </Link>
+        <Link
+          href="#experience"
+          className={`${sectionInView === "experience" && "text-white"} w-fit`}
+        >
+          Experience
         </Link>
         <Link
           href="#about"
@@ -52,7 +61,7 @@ export default function MobileMenu({
         <Link
           className="p-4 flex-1 flex justify-center w-full rounded-xl h-fit text-4xl visited:bg-[#E3D3BE] bg-linear-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur backdrop-blur-md"
           target="_blank"
-          href="https://linkedin.com/in/adeola-badero"
+          href="https://www.linkedin.com/in/liliana-constantino/"
         >
           <Icon icon="hugeicons:linkedin-01" />
         </Link>
@@ -61,17 +70,11 @@ export default function MobileMenu({
           <Link
             className="p-4 flex justify-center w-full rounded-xl h-fit text-2xl bg-linear-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur backdrop-blur-md"
             target="_blank"
-            href="https://github.com/adex-hub"
+            href="https://github.com/lilianaconstantino"
           >
             <Icon icon="hugeicons:github" />
           </Link>
-          <Link
-            className="p-4 flex justify-center w-full rounded-xl h-fit text-2xl bg-linear-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur backdrop-blur-md"
-            target="_blank"
-            href="https://x.com/Ade_the_great"
-          >
-            <Icon icon="akar-icons:x-fill" />
-          </Link>
+
         </div>
       </div>
     </motion.div>
