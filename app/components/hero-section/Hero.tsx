@@ -93,7 +93,7 @@ export default function Hero() {
             <p
               className="
                 font-extrabold
-                text-[#FCE0CE]
+                text-[#FFFFFF]
                 text-[clamp(1.2rem,2vw,1.7rem)]
               "
             >
@@ -102,7 +102,7 @@ export default function Hero() {
 
             <p
               className="
-                text-[#FCE0CE]
+                text-[#FFFFFF]
                 text-[clamp(1rem,1.4vw,1.2rem)]
                 mt-2
                 leading-relaxed
