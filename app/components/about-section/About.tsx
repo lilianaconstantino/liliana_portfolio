@@ -35,27 +35,27 @@ export default function About() {
           {/* TEXT SECTION */}
           <div className="flex-1 flex flex-col gap-5 md:gap-6">
 
-            <AnimatedBody className="text-[#FCE0CE] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
+            <AnimatedBody className="text-[#FFFFFF] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
               I’m Liliana Constantino, a data-focused developer with a background in web development and data analytics.
               I enjoy working with data to uncover insights, solve problems, and build thoughtful, user-centered solutions.
             </AnimatedBody>
 
-            <AnimatedBody className="text-[#FCE0CE] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
+            <AnimatedBody className="text-[#FFFFFF] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
               I was first introduced to coding through a data analytics fellowship, where I worked with real-world datasets to identify trends and communicate insights.
               That experience sparked my interest in data and pushed me to continue developing my technical skills.
             </AnimatedBody>
 
-            <AnimatedBody className="text-[#FCE0CE] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
+            <AnimatedBody className="text-[#FFFFFF] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
               Since then, I’ve gained hands-on experience through a web development internship at a nonprofit, where I built applications and strengthened my foundation in problem-solving, collaboration, and writing clean, maintainable code.
               More recently, I’ve been focusing on SQL, Python, and data analysis as I work toward transitioning into a technical role in data.
             </AnimatedBody>
 
-            <AnimatedBody className="text-[#FCE0CE] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
-              Outside of tech, I enjoy going to the gym regularly and love traveling and experiencing new places.
+            <AnimatedBody className="text-[#FFFFFF] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
+              Outside of tech, I enjoy going to the gym regularly, spending time with people I enjoy and I love capturing photos of beautiful views and special moments. 
               These parts of my life keep me grounded, curious, and constantly learning, which I bring into my work as well.
             </AnimatedBody>
 
-            <AnimatedBody className="text-[#FCE0CE] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
+            <AnimatedBody className="text-[#FFFFFF] text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] leading-relaxed">
               I’m especially motivated to contribute to greater representation of Latinas in tech and hope to grow into a role where I can build data systems that support informed decision-making and create meaningful impact.
             </AnimatedBody>
 

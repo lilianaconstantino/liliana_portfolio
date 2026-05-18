@@ -45,20 +45,20 @@ export default function TimelineItem({
           {/* Text Section */}
           <div className={`${styles.timeline} col-span-4`}>
             <div className="leading-tight">
-              <h1 className="font-quiverleaf text-white text-2xl sm:text-[2rem] font-bold">
+              <h1 className="font-quiverleaf text-white text-2xl sm:text-[1.7rem] font-bold">
                 {jobTitle}
               </h1>
 
-              <p className="font-quiverleaf text-white text-2xl sm:text-[1.3rem] font-bold my-2 sm:my-3">
+             <p className="font-quiverleaf text-white text-lg sm:text-[1.3rem] font-bold my-2 sm:my-3">
                 {company} | {jobType}
-              </p>
+            </p>
             </div>
 
-            <p className="font-quiverleaf text-white text-2xl sm:text-[1.3rem] my-3">
+            <p className="font-quiverleaf text-white text-lg sm:text-[1.2rem] my-3">
               {duration}
             </p>
 
-            <ul className="space-y-2 text-white/80">
+            <ul className="font-quiverleaf text-white text-lg sm:text-[1.1rem] my-3">
               {stuffIDid.map((stuff, index) => (
                 <li key={index}>{stuff}</li>
               ))}
